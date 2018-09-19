@@ -1,0 +1,13 @@
+.addTodo .input-field textarea {
+  font-size: 64px;
+  margin-left: 100px;
+  height: 100px;
+} 
+
+.addTodo .input-field i {
+  font-size: 82px;
+}
+
+.addTodo a {
+  margin-left: 10px;
+}
