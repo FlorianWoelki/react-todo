@@ -3,6 +3,14 @@ import $ from 'jquery';
 import './AddTodo.css';
 
 class AddTodo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputValue: ''
+    };
+  }
+
   componentWillMount = () => {
     $('body').css('display', 'none');
     $('body').fadeIn('slow');
@@ -11,6 +19,23 @@ class AddTodo extends Component {
   onGoBack = () => {
     $('body').fadeOut('slow', () => {
       this.props.history.push('/');
+    });
+  };
+
+  onAddTodo = () => {
+    $('body').fadeOut('slow', () => {
+      this.props.history.push('/');
+
+      if (this.state.inputValue) {
+        // TODO: Add todo via redux
+        console.log(this.state.inputValue);
+      }
+    });
+  };
+
+  updateInputValue = event => {
+    this.setState({
+      inputValue: event.target.value
     });
   };
 
@@ -23,6 +48,8 @@ class AddTodo extends Component {
             id="add-todo"
             className="materialize-textarea"
             placeholder="Todo Name"
+            onChange={event => this.updateInputValue(event)}
+            value={this.state.inputValue}
           />
         </div>
         <a
@@ -31,7 +58,10 @@ class AddTodo extends Component {
         >
           Go Back
         </a>
-        <a className="btn btn-large waves-effect waves-light red right">
+        <a
+          className="btn btn-large waves-effect waves-light red right"
+          onClick={this.onAddTodo}
+        >
           <i className="material-icons left">add</i>
           Add
         </a>
