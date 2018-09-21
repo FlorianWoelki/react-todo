@@ -7,17 +7,14 @@ import './App.css';
 class App extends Component {
   todos = [
     {
-      id: 0,
       name: 'Make dinner',
       done: false
     },
     {
-      id: 1,
       name: 'Meet friends',
       done: true
     },
     {
-      id: 2,
       name: 'Meet with family',
       done: false
     }
