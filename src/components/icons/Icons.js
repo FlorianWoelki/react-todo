@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import $ from 'jquery';
-import './Icons.css';
+import './icons.css';
 
 class Icons extends Component {
   constructor(props) {

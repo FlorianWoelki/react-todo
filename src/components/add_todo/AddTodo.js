@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
-import './AddTodo.css';
+import './add_todo.css';
 
 class AddTodo extends Component {
   constructor(props) {
