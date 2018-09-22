@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import $ from 'jquery';
 import './AddTodo.css';
 
@@ -11,7 +12,7 @@ class AddTodo extends Component {
     };
   }
 
-  componentWillMount = () => {
+  UNSAFE_componentWillMount = () => {
     $('body').css('display', 'none');
     $('body').fadeIn('slow');
   };
@@ -52,22 +53,26 @@ class AddTodo extends Component {
             value={this.state.inputValue}
           />
         </div>
-        <a
+        <button
           className="btn btn-large waves-effect waves-light grey right"
           onClick={this.onGoBack}
         >
           Go Back
-        </a>
-        <a
+        </button>
+        <button
           className="btn btn-large waves-effect waves-light red right"
           onClick={this.onAddTodo}
         >
           <i className="material-icons left">add</i>
           Add
-        </a>
+        </button>
       </div>
     );
   }
 }
+
+AddTodo.propTypes = {
+  history: PropTypes.object
+};
 
 export default AddTodo;

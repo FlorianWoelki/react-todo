@@ -35,6 +35,8 @@ module.exports = {
             "error",
             "always"
         ],
+        "no-use-before-define": "error",
+        "no-console": "off",
         "jsx-a11y/heading-has-content": 0
     }
 };

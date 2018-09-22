@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-eslint": "^9.0.0",
     "jquery": "^3.3.1",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "2.0.0-next.a671462c"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,8 +16,21 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
+    ]
+  },
   "devDependencies": {
-    "eslint": "^5.6.0",
+    "babel-eslint": "^9.0.0",
+    "eslint": "4.19.1",
     "eslint-plugin-react": "^7.11.1"
   }
 }
