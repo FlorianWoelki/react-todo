@@ -10,6 +10,10 @@ class AddTodo extends Component {
     this.state = {
       inputValue: ''
     };
+
+    this.onGoBack = this.onGoBack.bind(this);
+    this.onAddTodo = this.onAddTodo.bind(this);
+    this.updateInputValue = this.updateInputValue.bind(this);
   }
 
   UNSAFE_componentWillMount = () => {
@@ -17,13 +21,13 @@ class AddTodo extends Component {
     $('body').fadeIn('slow');
   };
 
-  onGoBack = () => {
+  onGoBack() {
     $('body').fadeOut('slow', () => {
       this.props.history.push('/');
     });
-  };
+  }
 
-  onAddTodo = () => {
+  onAddTodo() {
     $('body').fadeOut('slow', () => {
       this.props.history.push('/');
 
@@ -32,13 +36,13 @@ class AddTodo extends Component {
         console.log(this.state.inputValue);
       }
     });
-  };
+  }
 
-  updateInputValue = event => {
+  updateInputValue(event) {
     this.setState({
       inputValue: event.target.value
     });
-  };
+  }
 
   render() {
     return (

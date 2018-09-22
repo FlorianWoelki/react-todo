@@ -5,16 +5,22 @@ import $ from 'jquery';
 import './Icons.css';
 
 class Icons extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onAddTodo = this.onAddTodo.bind(this);
+  }
+
   UNSAFE_componentWillMount = () => {
     $('body').css('display', 'none');
     $('body').fadeIn('slow');
   };
 
-  onAddTodo = () => {
+  onAddTodo() {
     $('body').fadeOut('slow', () => {
       this.props.history.push('addTodo');
     });
-  };
+  }
 
   render() {
     return (
