@@ -48,16 +48,16 @@ class AddTodo extends Component {
 
   render() {
     return (
-      <div className="addTodo container">
+      <div className="add-todo container">
         <div className="input-field">
           <i className="material-icons prefix">add</i>
           <textarea
             id="add-todo"
             className="materialize-textarea"
-            placeholder="Todo Name"
             onChange={event => this.updateInputValue(event)}
             value={this.state.inputValue}
           />
+          <label htmlFor="add-todo">Todo Name</label>
         </div>
         <button
           className="btn btn-large waves-effect waves-light grey right"
@@ -84,6 +84,7 @@ AddTodo.propTypes = {
 
 // Map the state(data) from the store to props of this component.
 // Logging out the props would give us the todos array.
+// Save props using locally. 
 const mapStateToProps = state => {
   return {
     state
@@ -92,6 +93,7 @@ const mapStateToProps = state => {
 
 // Mapping dispatch to props. Saving the 'onAddTodo' function to the props
 // that executes the dispatch(addTodo) method in our action.
+// Save methods to props, actions that I want to execute.
 const mapDispatchToProps = dispatch => {
   return {
     onAddTodo: name => {
