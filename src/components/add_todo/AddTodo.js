@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import $ from 'jquery';
 import './add_todo.css';
 
+import { connect } from 'react-redux';
+import { addTodo } from '../../actions';
+
 class AddTodo extends Component {
   constructor(props) {
     super(props);
@@ -32,8 +35,7 @@ class AddTodo extends Component {
       this.props.history.push('/');
 
       if (this.state.inputValue) {
-        // TODO: Add todo via redux
-        console.log(this.state.inputValue);
+        this.props.onAddTodo(this.state.inputValue);
       }
     });
   }
@@ -76,7 +78,25 @@ class AddTodo extends Component {
 }
 
 AddTodo.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
+  onAddTodo: PropTypes.func.isRequired
 };
 
-export default AddTodo;
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddTodo: name => {
+      dispatch(addTodo(name));
+    } 
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddTodo);

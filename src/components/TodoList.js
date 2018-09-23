@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import Icons from './icons/Icons';
 import Todo from './Todo';
 
-const TodoList = ({ todoList }) => {
+import { connect } from 'react-redux';
+
+const TodoList = ({ todos }) => {
   return (
     <div className="container">
-      {todoList
+      {todos
         .sort((x, y) => (x.done === y.done ? 0 : x.done ? 1 : -1))
         .map((todo, index) => (
           <Todo key={index} {...todo} />
@@ -17,12 +19,18 @@ const TodoList = ({ todoList }) => {
 };
 
 TodoList.propTypes = {
-  todoList: PropTypes.arrayOf(
+  todos: PropTypes.arrayOf(
     PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      done: PropTypes.number.isRequired
+      name: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired
 };
 
-export default TodoList;
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  };
+};
+
+export default connect(mapStateToProps)(TodoList);
