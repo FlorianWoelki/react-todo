@@ -82,17 +82,21 @@ AddTodo.propTypes = {
   onAddTodo: PropTypes.func.isRequired
 };
 
+// Map the state(data) from the store to props of this component.
+// Logging out the props would give us the todos array.
 const mapStateToProps = state => {
   return {
     state
   };
 };
 
+// Mapping dispatch to props. Saving the 'onAddTodo' function to the props
+// that executes the dispatch(addTodo) method in our action.
 const mapDispatchToProps = dispatch => {
   return {
     onAddTodo: name => {
       dispatch(addTodo(name));
-    } 
+    }
   };
 };
 
