@@ -1,13 +1,23 @@
-.addTodo .input-field textarea {
+.add-todo .input-field textarea {
   font-size: 64px;
   margin-left: 100px;
   height: 100px;
 } 
 
-.addTodo .input-field i {
+.add-todo .input-field label {
+  font-size: 64px;
+  margin-left: 1.5em;
+  transform: translateY(3px);
+}
+
+.add-todo .input-field label.active {
+  transform: translateY(-28px) scale(0.3);
+}
+
+.add-todo .input-field i {
   font-size: 82px;
 }
 
-.addTodo button {
+.add-todo button {
   margin-left: 10px;
 }
