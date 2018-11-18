@@ -3,7 +3,7 @@ import Paths from './config/paths';
 import TodoList from './components/TodoList';
 import AddTodo from './components/add_todo/AddTodo';
 import { Switch, Route } from 'react-router-dom';
-import './app.css';
+import './App.css';
 
 class App extends Component {
   render() {

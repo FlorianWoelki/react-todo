@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
-import './add_todo.css';
+import './AddTodo.css';
 
 import { connect } from 'react-redux';
 import { addTodo } from '../../actions';
