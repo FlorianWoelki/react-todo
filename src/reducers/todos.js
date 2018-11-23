@@ -26,7 +26,7 @@ const todos = (state = initState, action) => {
     ];
   case 'FINISH_TODO':
     return state.map(
-      todo => (todo.id === action.id ? { ...todo, done: true } : todo)
+      todo => (todo.name === action.name ? { ...todo, done: true } : todo)
     );
   default:
     return state;

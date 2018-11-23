@@ -3,7 +3,7 @@ export const addTodo = name => ({
   name
 });
 
-export const finishTodo = id => ({
+export const finishTodo = name => ({
   type: 'FINISH_TODO',
-  id
+  name
 });
