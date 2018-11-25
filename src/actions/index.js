@@ -7,3 +7,7 @@ export const finishTodo = name => ({
   type: 'FINISH_TODO',
   name
 });
+
+export const clearTodos = {
+  type: 'CLEAR_TODOS'
+};

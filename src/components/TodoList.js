@@ -3,9 +3,15 @@ import PropTypes from 'prop-types';
 import Icons from './icons/Icons';
 import Todo from './Todo';
 
+import { clearTodos } from '../actions'; 
+
 import { connect } from 'react-redux';
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onClearTodos }) => {
+  function clearTodos() {
+    onClearTodos();
+  }
+
   return (
     <div className="container">
       {todos
@@ -13,7 +19,7 @@ const TodoList = ({ todos }) => {
         .map((todo, index) => (
           <Todo key={index} {...todo} />
         ))}
-      <Icons />
+      <Icons clearTodos={clearTodos} />
     </div>
   );
 };
@@ -24,13 +30,23 @@ TodoList.propTypes = {
       name: PropTypes.string.isRequired,
       done: PropTypes.bool.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  onClearTodos: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
   return {
-    todos: state.todos
+    todos: state.todos,
+    clearTodos: clearTodos
   };
 };
 
-export default connect(mapStateToProps)(TodoList);
+const mapDispatchToProps = dispatch => {
+  return {
+    onClearTodos: () => {
+      dispatch(clearTodos);
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
