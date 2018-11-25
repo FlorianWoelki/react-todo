@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Icons from './icons/Icons';
 import Todo from './Todo';
 
-import { clearTodos } from '../actions'; 
+import { clearTodos } from '../actions';
 
 import { connect } from 'react-redux';
 
@@ -49,4 +49,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

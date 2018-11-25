@@ -25,13 +25,11 @@ const todos = (state = initState, action) => {
       }
     ];
   case 'FINISH_TODO':
-    return state.map(
-      todo => (todo.name === action.name ? { ...todo, done: true } : todo)
+    return state.map(todo =>
+      todo.name === action.name ? { ...todo, done: true } : todo
     );
   case 'CLEAR_TODOS':
-    return state.filter(
-      todo => !todo.done
-    );
+    return state.filter(todo => !todo.done);
   default:
     return state;
   }
