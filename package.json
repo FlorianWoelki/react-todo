@@ -2,9 +2,8 @@
   "name": "react-todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://florianwoelki.github.io/react-todo/",
+  "homepage": "http://florianwoelki.github.io/react-todo",
   "dependencies": {
-    "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.6.2",
@@ -19,9 +18,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start:prod": "node dist/app",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "development": [
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1"
   }
 }

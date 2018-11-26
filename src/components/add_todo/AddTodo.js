@@ -17,6 +17,7 @@ class AddTodo extends Component {
     this.onGoBack = this.onGoBack.bind(this);
     this.onAddTodo = this.onAddTodo.bind(this);
     this.updateInputValue = this.updateInputValue.bind(this);
+    this.onEnterPress = this.onEnterPress.bind(this);
   }
 
   UNSAFE_componentWillMount = () => {
@@ -40,6 +41,15 @@ class AddTodo extends Component {
     });
   }
 
+  onEnterPress(event) {
+    if (event.keyCode === 13 && event.shiftKey === false) {
+      event.preventDefault();
+      if (this.state.inputValue) {
+        this.onAddTodo();
+      }
+    }
+  }
+
   updateInputValue(event) {
     this.setState({
       inputValue: event.target.value
@@ -55,6 +65,7 @@ class AddTodo extends Component {
             id="add-todo"
             className="materialize-textarea"
             onChange={event => this.updateInputValue(event)}
+            onKeyDown={this.onEnterPress}
             value={this.state.inputValue}
           />
           <label htmlFor="add-todo">Todo Name</label>
