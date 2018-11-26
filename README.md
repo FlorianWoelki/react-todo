@@ -34,7 +34,7 @@ $ npm build
 ### Todos
 
 - [ ] Write tests
-- [ ] Fix bug in text field
+- [x] Fix bug in text field
 - [ ] Add docker?
 - [ ] Add storage in the cloud
 
