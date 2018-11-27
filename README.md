@@ -35,6 +35,7 @@ $ npm build
 
 - [ ] Write tests
 - [x] Fix bug in text field
+- [ ] Check why deployment is not working
 - [ ] Add docker?
 - [ ] Add storage in the cloud
 
