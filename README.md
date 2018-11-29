@@ -35,7 +35,7 @@ $ npm build
 
 - [ ] Write tests
 - [x] Fix bug in text field
-- [ ] Check why deployment is not working
+- [x] Check why deployment is not working (notice: just worked with HashRouter)
 - [ ] Add docker?
 - [ ] Add storage in the cloud
 
